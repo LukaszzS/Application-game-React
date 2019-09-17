@@ -151,8 +151,9 @@ class TicTacToe extends React.Component {
             <div className="game-board">
               { this.state.board.map((field, key)=> {
                 return (
-                  <div className={this.checkIfFieldIsNotEmpty(field)}
-                  key={key}
+                  // <div className={this.checkIfFieldIsNotEmpty(field)}
+                  // <div className={this.checkIfFieldIsNotEmpty.bind(this)} key={key}
+                  <div className="game-board--field"
                   onClick={this.onFieldClick.bind(this, key)} id={"field" + key}>
                     <div className="game-board--field-content"> {field} </div>
                 </div>

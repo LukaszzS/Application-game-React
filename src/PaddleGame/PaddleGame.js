@@ -52,7 +52,7 @@ class PaddleGame extends React.Component {
   updateDirection() {
     this.game.ballX += this.game.ballSpeedX;
     this.game.ballY += this.game.ballSpeedY;
-  
+
     if(this.game.ballX < 0) {
       this.game.ballSpeedX *= -1;
     }
@@ -66,7 +66,7 @@ class PaddleGame extends React.Component {
       this.resetBall();
       this.setState({bounces: 0})
     }
-  
+
     let paddleTopEdgeY = this.game.gameBoard.height - this.game.paddleDistFromEdge;
     let paddleBottomEdgeY = paddleTopEdgeY + this.game.paddleHeight;
     let paddleLeftEdgeX = this.game.paddleX;
@@ -92,30 +92,30 @@ class PaddleGame extends React.Component {
   }
 
   printElements() {
-    this.game.context.fillStyle = 'black';
+    this.game.context.fillStyle = '#A3FBFC';
     this.game.context.fillRect(0,0, this.game.gameBoard.width, this.game.gameBoard.height)
-  
-    this.game.context.fillStyle = 'white';
+
+    this.game.context.fillStyle = 'rgb(255, 0, 0)';
     this.game.context.fillRect(this.game.paddleX, this.game.gameBoard.height - this.game.paddleDistFromEdge - this.game.paddleHeight, this.game.paddleWidth, this.game.paddleHeight)
-  
-    this.game.context.fillStyle = 'white';
+
+    this.game.context.fillStyle = 'rgb(255, 0, 0)';
     this.game.context.beginPath();
     this.game.context.arc(this.game.ballX, this.game.ballY, 10, 0, Math.PI * 2, true);
     this.game.context.fill();
   }
-  
+
   updateAll() {
     this.game.gameSpeed = this.game.gameSpeed - 1;
     this.printElements();
     this.updateDirection();
   }
-  
+
   updateMousePosition(ev) {
     let rect = this.refs.canvas.getBoundingClientRect();
     let mouseX = ev.clientX - rect.left;
     this.game.paddleX = mouseX - (this.game.paddleWidth / 2);
   }
-  
+
   resetBall() {
     this.game.ballX = this.game.gameBoard.width / 2;
     this.game.ballY = this.game.gameBoard.height / 4;
@@ -143,32 +143,30 @@ class PaddleGame extends React.Component {
     let startStopGameBtn;
 
     if (!this.state.gameRefreshInterval) {
-      startStopGameBtn = <button className="btn btn-primary" onClick={this.startStopGame.bind(this)}>START GAME</button>
+      startStopGameBtn = <button className="btn" onClick={this.startStopGame.bind(this)}>START GAME</button>
     } else {
-      startStopGameBtn = <button className="btn btn-danger" onClick={this.startStopGame.bind(this)}>STOP GAME</button>
+      startStopGameBtn = <button className="btn" onClick={this.startStopGame.bind(this)}>STOP GAME</button>
     }
 
     return (
       <div className="container__paddle">
-        <div className="container__score__btn">
-          <div className="table__score">
-            <h1>Current bounces:</h1>
-            <h1>{this.state.bounces}</h1>
-            <h1>High Score:</h1>
-            <h1>{localStorage.getItem("highScore")}</h1>
+          <div className="container__score__btn">
+              <div className="table__score">
+                <h1>Current bounces:</h1>
+                <h1>{this.state.bounces}</h1>
+                <h1>High Score:</h1>
+                <h1>{localStorage.getItem("highScore")}</h1>
+              </div>
+              <div className="btn__paddle">
+                {startStopGameBtn}
+                <button className="btn" onClick={this.resetScore.bind(this)}>RESET SCORE</button>
+              </div>
           </div>
-          <div className="btn__paddle">
-          <button className="btn" onClick={this.startGame.bind(this)}>START GAME</button>
-            <button className="btn" onClick={this.toggleFullScreen.bind(this)}>FULL SCREEN</button>
-            <button className="btn" onClick={this.toggleFullScreen.bind(this)}>PAUSE</button>
-            <button className="btn" onClick={this.resetScore.bind(this)}>RESET SCORE</button>
-          </div>
-        </div>
-        <canvas onDoubleClick={this.toggleFullScreen.bind(this)}
-          className={this.state.isFullScreen ? 'game__board game__board--full-screen' : 'game__board'} 
-          ref="canvas"
-          width="600"
-          height="400"></canvas>
+          <canvas onDoubleClick={this.toggleFullScreen.bind(this)}
+            className={this.state.isFullScreen ? 'game__board game__board--full-screen' : 'game__board'} 
+            ref="canvas"
+            width="600"
+            height="400"></canvas>
       </div>
     );
   }

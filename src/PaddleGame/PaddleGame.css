@@ -8,13 +8,15 @@
   background-size: cover;
 }
 .game__board{
-  border:3px solid rgba(0, 0, 255, 0.58);
+  margin: 15px;
+  border:10px solid rgba(0, 128, 255, 0.943);
   cursor: none;
 }
 .container__score__btn{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-right:-35px;
 }
 .btn__paddle{
   display: flex;

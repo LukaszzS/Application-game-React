@@ -17,26 +17,32 @@ class Settings extends React.Component {
   render() {
     return (
       <div className="container__settings">
-        <div className="container__settings__text">
-          <div className="settings__general">
-            <h1>ustawienie ogólne</h1>
-            <h3>{lang[localStorage.getItem('lang')].desc}</h3> */}
-            <h2>please select language:</h2>
-            <button className="btn btn-danger" onClick={this.setLang.bind(this, 'pl')}>PL</button>
-            <button className="btn btn-primary" onClick={this.setLang.bind(this, 'en')}>EN</button>
+          <div className="container__settings__text">
+              <div className="settings__general">
+                  <h1>ustawienie ogólne</h1>
+                  {/* <h3>{lang[localStorage.getItem('lang')].desc}</h3> */}
+                  <div>
+                    <h3>please select language: </h3>
+                    <button className="btn btn-danger" onClick={this.setLang.bind(this, 'pl')}>PL</button>
+                    <button className="btn btn-primary" onClick={this.setLang.bind(this, 'en')}>EN</button>
+                  </div>
+              </div>
+              <div className="settings__tictactoe">
+                  <h2>ustawienie gry kółko i krzyzyk</h2>
+                  <div>
+                    <h3>wybierz liczbę graczy: </h3>
+                    <button className="btn btn-outline-danger">1</button>
+                    <button className="btn btn-outline-primary">2</button>
+                  </div>
+              </div>
+              <div className="settings__paddle">
+                  <h2>ustawienie gry paddle game</h2>
+                  <div>
+                    <h3>ustaw prędkośc piłki</h3>
+                    <input type="range" name="points" min="1" max="50" className="input_range"></input>
+                  </div>
+              </div>
           </div>
-          <div className="settings__tictactoe">
-            <h2>ustawienie gry kółko i krzyzyk</h2>
-            <h3>wybierz liczbę graczy</h3>
-            <button className="btn btn-danger">1</button>
-            <button className="btn btn-danger">2</button>
-          </div>
-          <div className="settings__paddle">
-            <h2>ustawienie gry paddle game</h2>
-            <h3>Ustaw prędkośc piłki</h3>
-            <input type="range" name="points" min="1" max="10"></input>
-          </div>
-        </div>
       </div>
     );
   }

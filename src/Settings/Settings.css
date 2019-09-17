@@ -10,26 +10,40 @@
 }
 .container__settings__text{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
     align-items: center;
+    margin: 0 auto;
     width: 96%;
     height: 100vh;
-    border:1px solid red;
 }
 .container__settings .btn{
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
 }
-.settings__general{
-   border:1px solid black;
-}
-.settings__tictactoe{
-    border:1px solid green;
-}
+.settings__general,
+.settings__tictactoe,
 .settings__paddle{
-    border:1px solid blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+.settings__general div,
+.settings__tictactoe div{
+text-align: center;
+}
+
 .settings__paddle input{
     width: 100%;
+    color:red;
 }
+.input_range{
+    appearance: none;
+    width: 100%;
+    height: 25px;
+    border:none;
+    border-radius: 10px;
+    background: #0000FF;
+    cursor: pointer;
+}
+
