@@ -1,0 +1,78 @@
+.container__paddle{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100vh;
+  background-image: url('../img/karta3.png');
+  background-position: center;
+  background-size: cover;
+}
+.game__board{
+  border:3px solid rgba(0, 0, 255, 0.58);
+  cursor: none;
+}
+.container__score__btn{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.btn__paddle{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.btn__paddle .btn{
+  min-width:50%;
+  max-height: 40%;
+  border: 3px solid #0000FF;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: -25%;
+  background-image: url('../img/btn.gif');
+  background-position: center;
+  background-size: cover;
+  color:rgb(255, 0, 0);
+  box-shadow: 6px 6px 6px gray;
+  font-weight: 600;
+  font-family: 'Gochi Hand', cursive;
+  font-size: 40px;
+  outline: 0;
+  cursor: pointer;
+  box-shadow: 4px 4px 4px black;
+}
+.table__score{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: -25%;
+  color: #0000FF;
+  font-family: 'Gochi Hand', cursive;
+}
+.table__score h1:nth-child(1),
+.table__score h1:nth-child(3){
+  color: rgb(0, 170, 255);
+  font-size: 50px;
+}
+.table__score h1:nth-child(2),
+.table__score h1:nth-child(4){
+  color:rgb(255, 0, 0);
+  font-size: 45px;
+  font-weight: 900;
+}
+
+/* repo radka */
+/* .game-board {
+  cursor: none;
+}
+
+.game-board--full-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+} */

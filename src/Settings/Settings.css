@@ -1,0 +1,35 @@
+.container__settings{
+    background: #405D78;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/karta3.png');
+    background-position: center;
+    background-size: cover;
+    color: #0000FF;
+    font-family: 'Gochi Hand', cursive;
+}
+.container__settings__text{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 96%;
+    height: 100vh;
+    border:1px solid red;
+}
+.container__settings .btn{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+.settings__general{
+   border:1px solid black;
+}
+.settings__tictactoe{
+    border:1px solid green;
+}
+.settings__paddle{
+    border:1px solid blue;
+}
+.settings__paddle input{
+    width: 100%;
+}

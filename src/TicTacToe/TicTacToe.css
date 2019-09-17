@@ -1,0 +1,145 @@
+.tictactoe{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+.background-tictactoe{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 100vh;
+  background-image: url('../img/karta3.png');
+  background-position: center;
+  background-size: cover;
+}
+.game-board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 50%;
+  max-height: 50%;
+  margin-top: 32px;
+  margin-left: 80px;
+  transform: rotate(-2.5deg);
+}
+.game-board--field{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33%;
+  margin-bottom: 0.5%;
+  background: transparent;
+  cursor: pointer;
+}
+.game-board--field:hover {
+  background: rgba(88, 83, 239, 0.094);
+}
+#field0, #field1, #field2, #field3, #field4, #field5 {
+  border-bottom: solid  #0000FF;
+}
+#field1,  #field4, #field7 {
+  border-left: solid #0000FF;
+  border-right: solid #0000FF;
+}
+.game-board--field-content{
+  cursor: not-allowed;
+}
+.game-board--field:after {
+  display: block;
+  content: "";
+  padding-bottom: 100%;
+}
+.game-board--field-content{
+  color: #0000FF;
+  font-family: 'Gochi Hand', cursive;
+  font-weight: 100;
+  font-size: 7vw;
+}
+.side-menu{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-around;
+  width: 30%;
+  height: 50vh;
+  margin:0 15px;
+  margin-top: 10%;
+}
+.btn-tictactoe{
+ min-width:50%;
+ max-height: 40%;
+ border: 3px solid #0000FF;
+ border-radius: 10px;
+ margin-bottom: 10px;
+ background-image: url('../img/btn.gif');
+ background-position: center;
+ background-size: cover;
+ color:rgb(255, 0, 0);
+ box-shadow: 6px 6px 6px gray;
+ font-weight: 600;
+ font-family: 'Gochi Hand', cursive;
+ font-size: 40px;
+ outline: 0;
+ cursor: pointer;
+}
+.btn:hover{
+  border: 3px solid #0000FF;
+  color:rgba(226, 88, 88, 0.813);
+  box-shadow: 6px 6px 6px gray;
+  outline: 0;
+}
+.score-board{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 30vh;
+  margin-bottom: 20px;
+  color: #0000FF;
+  font-family: 'Gochi Hand', cursive;
+  font-size: 50px;
+}
+.score{
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  min-height: 40%;
+  /* background-image: url('../img/xx.gif'); */
+  /* background-image: url('../img/remis.gif'); */
+  /* background-image: url('../img/oo.gif'); */
+  /* background-position: center; */
+  /* background-size: 40%; */
+  /* background-repeat: no-repeat; */
+  font-size: 80px;
+}
+
+
+
+/* repo radka */
+/* .game-board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.game-board--field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32%;
+  margin-bottom: 2%;
+  background: gray;
+  cursor: pointer;
+}
+
+.game-board--field:hover {
+  background: darkgray;
+}
+
+.game-board--field:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+} */
