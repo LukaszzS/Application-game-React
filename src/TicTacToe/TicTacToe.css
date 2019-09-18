@@ -59,7 +59,7 @@
   display: flex;
   flex-direction: column;
   align-content: center;
-  justify-content: space-around;
+  justify-content: flex-start;
   width: 30%;
   height: 50vh;
   margin:0 15px;
@@ -78,27 +78,27 @@
  box-shadow: 6px 6px 6px gray;
  font-weight: 600;
  font-family: 'Gochi Hand', cursive;
- font-size: 40px;
+ font-size: 28px;
  outline: 0;
  cursor: pointer;
 }
 .score-board{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   width: 100%;
-  min-height: 30vh;
   margin-bottom: 20px;
   color: #0000FF;
   font-family: 'Gochi Hand', cursive;
   font-size: 50px;
+  margin-top: 100px;
+  margin-left: 10%;
 }
 .score{
   display: flex;
   justify-content: center;
-  width: 60%;
-  min-height: 40%;
   color:rgb(255, 0, 0);
   font-size: 80px;
   font-weight: 900;
+  margin-bottom: 10%;
 }

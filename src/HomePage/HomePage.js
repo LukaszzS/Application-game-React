@@ -44,6 +44,7 @@ class HomePage extends React.Component {
     return (
       <div>
         <div className="small-picture">
+        <div className='title'>{lang[localStorage.getItem("lang")].title}</div>
         </div>
       </div>
     );
@@ -51,16 +52,3 @@ class HomePage extends React.Component {
 }
 
 export default HomePage;
-// repo radka
-//   render() {
-//     return (
-//       <div>
-//         <h1>{lang[localStorage.getItem('lang')].title}</h1>
-//         <h3>{lang[localStorage.getItem('lang')].desc}</h3>
-//         <button className="btn-primary" onClick={this.getLocation.bind(this)}>Moja lokalizacja</button>
-//       </div>
-//     );
-//   }
-// }
-
-// export default HomePage;

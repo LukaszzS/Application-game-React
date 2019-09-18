@@ -1,18 +1,45 @@
 {
   "en": {
-    "title": "Welcome to GameBoard!",
+    "title": "Welcome to Game Board!",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id facilisis sem. Nam viverra faucibus ligula, maximus vehicula lectus. Duis eros neque, bibendum a libero eget, ultrices blandit enim. In felis ante, molestie nec interdum maximus, iaculis vel nibh. Aliquam erat volutpat.",
     "homePage": "Home Page",
     "ticTacToe": "Tic Tac Toe",
+    "winner": "player's win",
+    "startAgain":"START AGAIN",
     "paddleGame": "Paddle Game",
-    "settings": "Settings"
+    "yourScore": "Current bounces:",
+    "bestScore": "High Score:",
+    "startGame": "START GAME",
+    "stopGame": "STOP GAME",
+    "resetScore":"RESET SCORE ",
+    "settings": "Settings",
+    "gobalSettings": "global settings",
+    "pleaseSelect": "select language",
+    "settingsTicTacToe":"tic-tac-toe game setting",
+    "pleaseNumberOfPlayers":"select the number of players:",
+    "settingsPaddlegame":"paddle-game setting",
+    "pleaseSetTheSpeedTheBall": "set the ball speed"
+
   },
   "pl": {
-    "title": "Witam na PlatformieGier!",
+    "title": "Witam na Platformie Gier!",
     "desc": "Nie ma nikogo, kto lubiłby ból dla samego bólu, szukał go tylko po to, by go poczuć, po prostu dlatego, że to ból...",
     "homePage": "Strona główna",
-    "ticTacToe": "Kółko Krzyżyk",
-    "paddleGame": "Odbijanie piłki",
-    "settings": "Ustawienia"
+    "ticTacToe": "Gra - Kółko Krzyżyk",
+    "winner": "Wygrał",
+    "startAgain":"JESZCZE RAZ",
+    "paddleGame": "Gra - Odbijanie piłki",
+    "yourScore":"Aktualny wynik:",
+    "bestScore":"Najlepszy wynik",
+    "startGame": "START GRY",
+    "stopGame": "PAUZA GRY",
+    "resetScore":"ZERUJ REKORD ",
+    "settings": "Ustawienia",
+    "gobalSettings": "ustawienia ogólne",
+    "pleaseSelect": "wybierz język",
+    "settingsTicTacToe": "ustawienie gry kółko i krzyzyk",
+    "pleaseNumberOfPlayers": "wybierz liczbę graczy:",
+    "settingsPaddlegame": "ustawienie gry odbijanie piłki",
+    "pleaseSetTheSpeedTheBall": "ustaw prędkośc piłki"
   }
 }

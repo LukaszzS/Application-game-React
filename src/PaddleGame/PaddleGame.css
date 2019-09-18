@@ -7,7 +7,8 @@
   background-position: center;
   background-size: cover;
 }
-.game__board{
+
+.game-board-paddle{
   margin: 15px;
   border:10px solid rgba(0, 128, 255, 0.943);
   cursor: none;
@@ -40,7 +41,7 @@
   box-shadow: 6px 6px 6px gray;
   font-weight: 600;
   font-family: 'Gochi Hand', cursive;
-  font-size: 40px;
+  font-size: 28px;
   outline: 0;
   cursor: pointer;
   box-shadow: 4px 4px 4px black;
@@ -65,31 +66,18 @@
   font-size: 45px;
   font-weight: 900;
 }
-
-/* repo radka */
-/* .game-board {
-  cursor: none;
-}
-
 .game-board--full-screen {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-} */
+}
 .full {
   position: absolute;
   z-index: 99;
-  right: 710px;
-  top: 70px;
+  right: 730px;
+  top: 90px;
   opacity: 0.5;
-/* 
-  background-image: url('../img/fullscreen.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  min-width: 5%;
-  min-height: 11%; */
-
-
+  font-size: 24px;
 }

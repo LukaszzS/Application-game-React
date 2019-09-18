@@ -1,5 +1,8 @@
 import React from 'react';
+import lang from '../lang.json';
 import './TicTacToe.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMedal } from '@fortawesome/free-solid-svg-icons';
 
 class TicTacToe extends React.Component {
   constructor() {
@@ -159,10 +162,9 @@ class TicTacToe extends React.Component {
                 }) }
               </div>
               <div className="side-menu">
-                <div className="score-board">Wygrał:
+                <div className="score-board"><FontAwesomeIcon icon={faMedal}/>{lang[localStorage.getItem('lang')].winner}</div>
                 <div className="score">{this.state.winner}</div>
-                </div>
-                <button onClick={this.resetGameBoard.bind(this)} className="btn-tictactoe">RESET GAME</button>
+                <button onClick={this.resetGameBoard.bind(this)} className="btn-tictactoe">{lang[localStorage.getItem('lang')].startAgain}</button>
               </div>
             </div>
           </div>

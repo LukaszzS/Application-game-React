@@ -1,5 +1,10 @@
 import React from 'react';
+import lang from '../lang.json';
 import './PaddleGame.css';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCompress } from '@fortawesome/free-solid-svg-icons';
+
 
 class PaddleGame extends React.Component {
   constructor() {
@@ -120,11 +125,7 @@ class PaddleGame extends React.Component {
     this.game.ballX = this.game.gameBoard.width / 2;
     this.game.ballY = this.game.gameBoard.height / 4;
   }
-// =======================================
-  // toggleFullScreen() {
-  //   this.setState({isFullScreen: !this.state.isFullScreen})
-  // }
-// =======================================
+
 setCanvasSize() {
   if (this.state.isFullScreen) {
     return "game-board-paddle game-board-paddle--full-screen";
@@ -136,8 +137,6 @@ toggleFullScreen() {
     isFullScreen: !this.state.isFullScreen
   });
 }
-
-// =======================================
 
   startStopGame() {
     if (!this.state.gameRefreshInterval) {
@@ -157,9 +156,9 @@ toggleFullScreen() {
     let startStopGameBtn;
 
     if (!this.state.gameRefreshInterval) {
-      startStopGameBtn = <button className="btn" onClick={this.startStopGame.bind(this)}>START GAME</button>
+      startStopGameBtn = <button className="btn" onClick={this.startStopGame.bind(this)}>{lang[localStorage.getItem('lang')].startGame}</button>
     } else {
-      startStopGameBtn = <button className="btn" onClick={this.startStopGame.bind(this)}>STOP GAME</button>
+      startStopGameBtn = <button className="btn" onClick={this.startStopGame.bind(this)}>{lang[localStorage.getItem('lang')].stopGame}</button>
     }
 
     return (
@@ -167,19 +166,19 @@ toggleFullScreen() {
         <button
           onClick={this.toggleFullScreen.bind(this)}
           style={{ cursor: "pointer" }}
-          className='full'>FULL
+          className='full'><FontAwesomeIcon icon={faCompress}/>
         </button>
         <div className="container__paddle">
             <div className="container__score__btn">
                 <div className="table__score">
-                  <h1>Current bounces:</h1>
+                  <h1>{lang[localStorage.getItem('lang')].yourScore}</h1>
                   <h1>{this.state.bounces}</h1>
-                  <h1>High Score:</h1>
+                  <h1>{lang[localStorage.getItem('lang')].bestScore}</h1>
                   <h1>{localStorage.getItem("highScore")}</h1>
                 </div>
                 <div className="btn__paddle">
                   {startStopGameBtn}
-                  <button className="btn" onClick={this.resetScore.bind(this)}>RESET SCORE</button>
+                  <button className="btn" onClick={this.resetScore.bind(this)}>{lang[localStorage.getItem('lang')].resetScore}</button>
                 </div>
             </div>
             <canvas onDoubleClick={this.toggleFullScreen.bind(this)}
@@ -188,11 +187,6 @@ toggleFullScreen() {
               width="600"
               height="400">
             </canvas>
-            {/* <canvas onDoubleClick={this.toggleFullScreen.bind(this)}
-              className={this.state.isFullScreen ? 'game__board game__board--full-screen' : 'game__board'} 
-              ref="canvas"
-              width="600"
-              height="400"></canvas> */}
         </div>
       </>
     );
@@ -200,26 +194,3 @@ toggleFullScreen() {
 }
 
 export default PaddleGame;
-    // repo radka
-//     return (
-//       <div>
-//         <h1>Current bounces: {this.state.bounces}</h1>
-//         <h2>High Score: {localStorage.getItem("highScore")}</h2>
-
-//         <button className="btn btn-success" onClick={this.toggleFullScreen.bind(this)}>FULL SCREEN</button>
-
-//         {startStopGameBtn}
-        
-//         <button className="btn btn-primary" onClick={this.resetScore.bind(this)}>RESET SCORE</button>
-
-//         <canvas onDoubleClick={this.toggleFullScreen.bind(this)}
-//         className={this.state.isFullScreen ? 'game-board game-board--full-screen' : 'game-board'} 
-//         ref="canvas" 
-//         width="800" 
-//         height="600"></canvas>
-//       </div>
-//     );
-//   } 
-// }
-
-// export default PaddleGame;
