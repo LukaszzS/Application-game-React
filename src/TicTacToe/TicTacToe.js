@@ -117,8 +117,7 @@ class TicTacToe extends React.Component {
 
     this.checkGameStatus('x');
   }
-
-  resetGameBoard() {
+  resetGameBoard(){
     this.setState({
       board: [
         '', '', '',
@@ -126,75 +125,50 @@ class TicTacToe extends React.Component {
         '', '', '',
       ],
       turn: 0,
+      winner:"",
       gameEnabled: true
     })
   }
-
   endGame(selectedPlayer) {
-    this.setState({
-      gameEnabled: false,
-    })
-
+      console.log(this.state.turn);
     if (selectedPlayer && this.state.gameEnabled) {
-      console.log('Gratulcje, wygrał gracz:', selectedPlayer);
+      this.setState({
+        gameEnabled: false,
+        winner: selectedPlayer,
+      });
     } else if (this.state.gameEnabled && this.state.turn > 7) {
-      console.log('REMIS! Żaden gracz nie wygrał!')
-      return;
+      this.setState({
+        gameEnabled: false,
+        winner: 'Remis!',
+      });
+    }
+  }
+  render() {
+      return (
+        <>
+          <div className="tictactoe">
+            <div className="background-tictactoe">
+              <div className="game-board">
+                { this.state.board.map((field, key)=> {
+                  return (
+                    <div className="game-board--field"
+                    onClick={this.onFieldClick.bind(this, key)} id={"field" + key}>
+                      <div className="game-board--field-content"> {field} </div>
+                  </div>
+                  )
+                }) }
+              </div>
+              <div className="side-menu">
+                <div className="score-board">Wygrał:
+                <div className="score">{this.state.winner}</div>
+                </div>
+                <button onClick={this.resetGameBoard.bind(this)} className="btn-tictactoe">RESET GAME</button>
+              </div>
+            </div>
+          </div>
+        </>
+      );
     }
   }
 
-  render() {
-    return (
-      <>
-        <div className="tictactoe">
-          <div className="background-tictactoe">
-            <div className="game-board">
-              { this.state.board.map((field, key)=> {
-                return (
-                  // <div className={this.checkIfFieldIsNotEmpty(field)}
-                  // <div className={this.checkIfFieldIsNotEmpty.bind(this)} key={key}
-                  <div className="game-board--field"
-                  onClick={this.onFieldClick.bind(this, key)} id={"field" + key}>
-                    <div className="game-board--field-content"> {field} </div>
-                </div>
-                )
-              }) }
-            </div>
-            <div className="side-menu">
-              <div className="score-board">Wygrał: {this.state.winner}
-              <div className="score"></div>
-              </div>
-              <button onClick={this.resetGameBoard.bind(this)} className="btn-tictactoe">RESET GAME</button>
-            </div>
-          </div>
-        </div>
-      </>
-     );
-  }
-}
-
 export default TicTacToe;
-
-
-
-
-  // repo radka
-//   render() {
-//     return (
-//       <>
-//         <div className="game-board">
-//           { this.state.board.map((field, key) => {
-//             return (
-//               <div className="game-board--field" key={key} onClick={this.onFieldClick.bind(this, key)}>
-//                 <div className="game-board--field-content">{field}</div>
-//               </div>
-//             )
-//           }) }
-//         </div>
-//         <button onClick={this.resetGameBoard.bind(this)} className="btn btn-danger">RESET GAME</button>
-//       </>
-//     );
-//   } 
-// }
-
-// export default TicTacToe;

@@ -78,3 +78,18 @@
   width: 100vw;
   height: 100vh;
 } */
+.full {
+  position: absolute;
+  z-index: 99;
+  right: 710px;
+  top: 70px;
+  opacity: 0.5;
+/* 
+  background-image: url('../img/fullscreen.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  min-width: 5%;
+  min-height: 11%; */
+
+
+}

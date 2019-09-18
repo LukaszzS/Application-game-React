@@ -120,10 +120,24 @@ class PaddleGame extends React.Component {
     this.game.ballX = this.game.gameBoard.width / 2;
     this.game.ballY = this.game.gameBoard.height / 4;
   }
+// =======================================
+  // toggleFullScreen() {
+  //   this.setState({isFullScreen: !this.state.isFullScreen})
+  // }
+// =======================================
+setCanvasSize() {
+  if (this.state.isFullScreen) {
+    return "game-board-paddle game-board-paddle--full-screen";
+  } else return "game-board-paddle";
+}
 
-  toggleFullScreen() {
-    this.setState({isFullScreen: !this.state.isFullScreen})
-  }
+toggleFullScreen() {
+  this.setState({
+    isFullScreen: !this.state.isFullScreen
+  });
+}
+
+// =======================================
 
   startStopGame() {
     if (!this.state.gameRefreshInterval) {
@@ -149,25 +163,38 @@ class PaddleGame extends React.Component {
     }
 
     return (
-      <div className="container__paddle">
-          <div className="container__score__btn">
-              <div className="table__score">
-                <h1>Current bounces:</h1>
-                <h1>{this.state.bounces}</h1>
-                <h1>High Score:</h1>
-                <h1>{localStorage.getItem("highScore")}</h1>
-              </div>
-              <div className="btn__paddle">
-                {startStopGameBtn}
-                <button className="btn" onClick={this.resetScore.bind(this)}>RESET SCORE</button>
-              </div>
-          </div>
-          <canvas onDoubleClick={this.toggleFullScreen.bind(this)}
-            className={this.state.isFullScreen ? 'game__board game__board--full-screen' : 'game__board'} 
-            ref="canvas"
-            width="600"
-            height="400"></canvas>
-      </div>
+      <>
+        <button
+          onClick={this.toggleFullScreen.bind(this)}
+          style={{ cursor: "pointer" }}
+          className='full'>FULL
+        </button>
+        <div className="container__paddle">
+            <div className="container__score__btn">
+                <div className="table__score">
+                  <h1>Current bounces:</h1>
+                  <h1>{this.state.bounces}</h1>
+                  <h1>High Score:</h1>
+                  <h1>{localStorage.getItem("highScore")}</h1>
+                </div>
+                <div className="btn__paddle">
+                  {startStopGameBtn}
+                  <button className="btn" onClick={this.resetScore.bind(this)}>RESET SCORE</button>
+                </div>
+            </div>
+            <canvas onDoubleClick={this.toggleFullScreen.bind(this)}
+              className={this.setCanvasSize()}
+              ref="canvas"
+              width="600"
+              height="400">
+            </canvas>
+            {/* <canvas onDoubleClick={this.toggleFullScreen.bind(this)}
+              className={this.state.isFullScreen ? 'game__board game__board--full-screen' : 'game__board'} 
+              ref="canvas"
+              width="600"
+              height="400"></canvas> */}
+        </div>
+      </>
     );
   }
 }
