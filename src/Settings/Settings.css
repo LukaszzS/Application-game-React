@@ -1,49 +1,41 @@
-.container__settings{
-    background: #405D78;
-    width: 100%;
-    height: 100vh;
+.settings_img{
     background-image: url('../img/karta3.png');
     background-position: center;
     background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+.settings{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
     color: #0000FF;
     font-family: 'Gochi Hand', cursive;
 }
-.container__settings__text{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    width: 96%;
-    height: 100vh;
+.settings h1{
+    margin-top: 4%;
+    border-bottom: 4px solid red;
+    font-weight: 900;
 }
-.container__settings .btn{
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    -webkit-font-smoothing: antialiased;
-}
-.settings__general,
-.settings__tictactoe,
-.settings__paddle{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.settings__general div,
-.settings__tictactoe div{
-text-align: center;
-}
-
-.settings__paddle input{
+.settings__title {
     width: 100%;
-    color:red;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 8%;
+  }
+.settings__title h2 {
+    font-weight: 900;
+}
+.settings__box {
+    width: 80%;
 }
 .input_range{
     appearance: none;
-    width: 100%;
+    width: 40%;
     height: 25px;
     border:none;
+    outline: 0;
     border-radius: 10px;
     background: #0000FF;
     cursor: pointer;
 }
-
