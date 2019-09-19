@@ -7,8 +7,8 @@
   background-position: center;
   background-size: cover;
 }
-
 .game-board-paddle{
+  position: relative;
   margin: 15px;
   border:10px solid rgba(0, 128, 255, 0.943);
   cursor: none;
@@ -41,7 +41,7 @@
   box-shadow: 6px 6px 6px gray;
   font-weight: 600;
   font-family: 'Gochi Hand', cursive;
-  font-size: 28px;
+  font-size: 22px;
   outline: 0;
   cursor: pointer;
   box-shadow: 4px 4px 4px black;
@@ -58,15 +58,15 @@
 .table__score h1:nth-child(1),
 .table__score h1:nth-child(3){
   color: rgb(0, 170, 255);
-  font-size: 50px;
+  font-size: 45px;
 }
 .table__score h1:nth-child(2),
 .table__score h1:nth-child(4){
   color:rgb(255, 0, 0);
-  font-size: 45px;
+  font-size: 40px;
   font-weight: 900;
 }
-.game-board--full-screen {
+.game-board-paddle--full-screen {
   position: fixed;
   top: 0;
   left: 0;
@@ -76,8 +76,8 @@
 .full {
   position: absolute;
   z-index: 99;
-  right: 730px;
-  top: 90px;
+  right: 200px;
+  top: 100px;
   opacity: 0.5;
   font-size: 24px;
 }

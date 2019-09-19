@@ -5,9 +5,22 @@ import { EventEmitter } from '../EventEmitter'
 
 
 class Settings extends React.Component {
+  constructor(props){
+    super(props);
+    this.state={
+      gameSpeed: localStorage.getItem("gameSpeed") ? localStorage.getItem("gameSpeed") : "0"
+    }
+  }
   setLang(lang) {
     localStorage.setItem('lang', lang);
     EventEmitter.dispatch('langChange', true)
+  }
+  onSliderChange = (e) =>{
+    const value = e.target.value;
+    localStorage.setItem("gameSpeed", value);
+    this.setState({
+      gameSpeed:value
+    })
   }
 
   render() {
@@ -22,7 +35,7 @@ class Settings extends React.Component {
                       <button className="btn btn-primary" onClick={this.setLang.bind(this, 'en')}>EN</button>
                 </div>
             </div>
-            <div className="settings settings__box">
+            {/* <div className="settings settings__box">
                 <div className="settings__title">
                     <h2>{lang[localStorage.getItem("lang")].settingsTicTacToe}</h2>
                     <div>
@@ -31,13 +44,13 @@ class Settings extends React.Component {
                       <button className="btn btn-outline-primary">2</button>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <div className="settings settings__box">
                 <div className="settings__title">
                     <h2>{lang[localStorage.getItem("lang")].settingsPaddlegame}</h2>
                     <div>
                       <h3>{lang[localStorage.getItem("lang")].pleaseSetTheSpeedTheBall}</h3>
-                      <input type="range" name="points" min="1" max="50" className="input_range"></input>
+                      <input value={this.state.gameSpeed} onChange={this.onSliderChange} type="range" name="points" min="0" max="200" className="input_range"></input>
                     </div>
                 </div>
             </div>

@@ -1,17 +1,17 @@
 import React from 'react';
 import lang from '../lang.json';
 import './PaddleGame.css';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCompress } from '@fortawesome/free-solid-svg-icons';
+import { faTv } from '@fortawesome/free-solid-svg-icons';
 
 
 class PaddleGame extends React.Component {
   constructor() {
     super();
+    const speedFromSettings = localStorage.getItem("gameSpeed") ? parseInt(localStorage.getItem("gameSpeed")) : 0;
 
     this.game = {
-      gameSpeed: 1000,
+      gameSpeed: 500 - speedFromSettings,
       gameBoard: null,
       context: null,
       ballX: 100,
@@ -31,12 +31,12 @@ class PaddleGame extends React.Component {
       isFullScreen: false,
     }
 
-    if (localStorage.getItem('highScore') > 10 && localStorage.getItem('highScore') < 20) {
-      this.game.gameSpeed = 500
+    if (localStorage.getItem('highScore') > 5 && localStorage.getItem('highScore') < 10) {
+      this.game.gameSpeed = 800 - speedFromSettings;
     }
 
-    if (localStorage.getItem('highScore') > 20) {
-      this.game.gameSpeed = 250
+    if (localStorage.getItem('highScore') > 15) {
+      this.game.gameSpeed = 550 - speedFromSettings;
     }
 
     this.updateAll = this.updateAll.bind(this);
@@ -103,7 +103,7 @@ class PaddleGame extends React.Component {
     this.game.context.fillStyle = 'rgb(255, 0, 0)';
     this.game.context.fillRect(this.game.paddleX, this.game.gameBoard.height - this.game.paddleDistFromEdge - this.game.paddleHeight, this.game.paddleWidth, this.game.paddleHeight)
 
-    this.game.context.fillStyle = 'rgb(255, 0, 0)';
+    this.game.context.fillStyle = '#0097FA';
     this.game.context.beginPath();
     this.game.context.arc(this.game.ballX, this.game.ballY, 10, 0, Math.PI * 2, true);
     this.game.context.fill();
@@ -133,15 +133,14 @@ setCanvasSize() {
 }
 
 toggleFullScreen() {
-  this.setState({
-    isFullScreen: !this.state.isFullScreen
-  });
+  this.setState({isFullScreen: !this.state.isFullScreen});
 }
 
   startStopGame() {
     if (!this.state.gameRefreshInterval) {
       this.setState({gameRefreshInterval: setInterval(this.updateAll, this.game.gameSpeed/30)});
     } else {
+
       clearInterval(this.state.gameRefreshInterval);
       this.setState({gameRefreshInterval: null})
     }
@@ -166,7 +165,7 @@ toggleFullScreen() {
         <button
           onClick={this.toggleFullScreen.bind(this)}
           style={{ cursor: "pointer" }}
-          className='full'><FontAwesomeIcon icon={faCompress}/>
+          className='full'><FontAwesomeIcon icon={faTv}/>
         </button>
         <div className="container__paddle">
             <div className="container__score__btn">
@@ -185,7 +184,7 @@ toggleFullScreen() {
               className={this.setCanvasSize()}
               ref="canvas"
               width="600"
-              height="400">
+              height="300">
             </canvas>
         </div>
       </>
