@@ -162,12 +162,12 @@ toggleFullScreen() {
 
     return (
       <>
+        <div className="container__paddle">
         <button
           onClick={this.toggleFullScreen.bind(this)}
           style={{ cursor: "pointer" }}
           className='full'><FontAwesomeIcon icon={faTv}/>
         </button>
-        <div className="container__paddle">
             <div className="container__score__btn">
                 <div className="table__score">
                   <h1>{lang[localStorage.getItem('lang')].yourScore}</h1>

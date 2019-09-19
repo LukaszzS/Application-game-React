@@ -7,7 +7,7 @@
 }
 .settings{
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     color: #0000FF;
     font-family: 'Gochi Hand', cursive;
@@ -38,4 +38,13 @@
     border-radius: 10px;
     background: #0000FF;
     cursor: pointer;
+
+}
+.settinsMinMax{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    opacity: 0.5;
+    margin: -10px 60px 0 60px;
+
 }

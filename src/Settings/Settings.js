@@ -47,10 +47,14 @@ class Settings extends React.Component {
             </div> */}
             <div className="settings settings__box">
                 <div className="settings__title">
-                    <h2>{lang[localStorage.getItem("lang")].settingsPaddlegame}</h2>
+                      <h2>{lang[localStorage.getItem("lang")].settingsPaddlegame}</h2>
                     <div>
-                      <h3>{lang[localStorage.getItem("lang")].pleaseSetTheSpeedTheBall}</h3>
-                      <input value={this.state.gameSpeed} onChange={this.onSliderChange} type="range" name="points" min="0" max="200" className="input_range"></input>
+                          <h3>{lang[localStorage.getItem("lang")].pleaseSetTheSpeedTheBall}</h3>
+                          <input value={this.state.gameSpeed} onChange={this.onSliderChange} type="range" name="points" min="0" max="200" className="input_range"></input>
+                        <div className="settinsMinMax">
+                          <p>min</p>
+                          <p>max</p>
+                        </div>
                     </div>
                 </div>
             </div>
